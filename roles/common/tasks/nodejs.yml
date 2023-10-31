@@ -22,4 +22,4 @@
 
 
 - name: setup {{component}}
-  ansible.builtin.import_tasks: systemd.yml
+  ansible.builtin.import_tasks: systemd-setup.yml
