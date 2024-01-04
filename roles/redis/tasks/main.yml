@@ -1,4 +1,4 @@
-- name: install redis
+- name: install redis repo
   ansible.builtin.yum:
     name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
     state: installed
@@ -12,13 +12,13 @@
     name: redis
     state: installed
 
-- name: update listen address /etc/redis.conf
+- name: update listen address
   ansible.builtin.replace:
     path: /etc/redis.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
-- name: update listen address /etc/redis/redis.conf
+- name: update listen address
   ansible.builtin.replace:
     path: /etc/redis/redis.conf
     regexp: '127.0.0.1'
